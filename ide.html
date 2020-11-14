@@ -5,11 +5,12 @@
 </head>
 
 <style>
-	html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+	html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #101010; }
 	#editor {
 		height: 100%;
 		width: 50%;
 		display: inline-block;
+
 	}
 
 	#iframe {
@@ -27,11 +28,9 @@
 
 <body onload="ready()">
 	<div id='container'>
-		<div id='editor'>
-		</div>
+		<div id='editor'></div>
 
-		<iframe id="iframe" frameborder="0">
-		</iframe>
+		<iframe id="iframe" frameborder="0"></iframe>
 	</div>
 
 	<script>
@@ -79,7 +78,7 @@
     			fontSize: "16pt",
     			showLineNumbers: false,
     			showGutter: false,
-    			vScrollBarAlwaysVisible:true,
+    			vScrollBarAlwaysVisible: false,
     			enableBasicAutocompletion: false, enableLiveAutocompletion: false
   			});
 
