@@ -1,0 +1,106 @@
+html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #101010; }
+
+/* Loader */
+
+.loader {
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #161616;
+}
+
+.loader div {
+    width: 20px;
+    height: 20px;
+    background: #097cff;
+    margin: 5px;
+    border-radius: 50%;
+    animation: load 0.5s cubic-bezier(.19, .57, .3, .98) infinite alternate;
+}
+
+.loader div:nth-child(2) {
+    animation-delay: 0.1s;
+    opacity: 0.8;
+}
+
+.loader div:nth-child(3) {
+    animation-delay: 0.2s;
+    opacity: 0.6;
+}
+
+.loader div:nth-child(4) {
+    animation-delay: 0.3s;
+    opacity: 0.4;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes load {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Editor */
+
+#editor {
+    height: 100%;
+    width: 55%;
+    display: inline-block;
+}
+
+#save {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+#menu {
+    width: auto;
+    height: auto;
+    background: #1A1A1A;
+    border-bottom: 1px solid #101010;
+    position: relative;
+    margin-top: 0.5px;
+}
+
+#menu:before {
+    background: none;
+    border-bottom: 1px solid #161616;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
+}
+
+#iframe {
+    height: 100%;
+    width: 45%;
+    display: inline-block;
+    background: #ffffff;
+}
+
+#container {
+    height: calc(100% - 40px);
+    width: auto;
+    white-space: nowrap;
+}
